@@ -1,0 +1,47 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import Dip
+
+class {{ prefix }}{{ module_info.name }}Assembly {
+    
+    func assembly() -> DependencyContainer {
+        let container = DependencyContainer()
+        let viewTag = "{{ prefix }}{{ module_info.name }}ViewController" // MARK:- add view tag !!!
+        
+        let router = container.register(.shared, factory: {{ prefix }}{{ module_info.name }}Router.init)
+            .resolvingProperties { container, router in
+                router.transitionHandler = try container.resolve(tag: viewTag)
+        }
+        container.register(router, type: {{ module_info.name }}RouterInput.self)
+        
+        let interactor = container.register(.shared, factory: {{ prefix }}{{ module_info.name }}Interactor.init)
+            .resolvingProperties { container, interactor in
+                interactor.output = try! container.resolve()
+        }
+        container.register(interactor, type: {{ module_info.name }}InteractorInput.self)
+        
+        let presenter = container.register(.shared, factory: {{ prefix }}{{ module_info.name }}Presenter.init)
+            .resolvingProperties { container, presenter in
+                presenter.view = try container.resolve(tag: viewTag)
+                presenter.interactor = try container.resolve()
+                presenter.router = try container.resolve()
+        }
+        container.register(presenter, type: {{ module_info.name }}InteractorOutput.self)
+        container.register(presenter, type: {{ module_info.name }}ViewOutput.self)
+        
+        let view = container.register(.shared, tag: viewTag) { {{ prefix }}{{ module_info.name }}ViewController() }
+            .resolvingProperties { container, view in
+                view.output = try container.resolve()
+        }
+        container.register(view, type: TransitionHandlerProtoocol.self)
+        container.register(view, type: {{ module_info.name }}ViewInput.self)
+        return container
+    }
+}

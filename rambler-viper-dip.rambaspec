@@ -1,0 +1,29 @@
+# Template information section
+name: "rambler-viper-dip"
+summary: "rambler-viper-dip template for Rabler-VIPER"
+author: "Aleksandr Klavsut"
+version: "2.0.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# View layer
+- {name: View/ViewProtocols.swift, path: Code/View/viewProtocols.swift.liquid}
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/ModuleProtocols.swift, path: Code/Presenter/moduleProtocols.swift.liquid}
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# Interactor layer
+- {name: Interactor/InteractorProtocols.swift, path: Code/Interactor/interactorProtocols.swift.liquid}
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+
+# Router layer
+- {name: Router/RouterInput.swift, path: Code/Router/router_input.swift.liquid}
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
+
+# Configurator
+- {name: Configurator/Configurator.swift, path: Code/Configurator/configurator.swift.liquid}
+
