@@ -1,0 +1,38 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ prefix }}{{ module_info.name }}ViewController: BaseViewController {
+	
+	// MARK: - Private properties
+	private var viewModel: {{ prefix }}{{ module_info.name }}ViewModel!
+    private lazy var rootView: {{ prefix }}{{ module_info.name }}View = {
+		let view = {{ prefix }}{{ module_info.name }}View(delegate: self)
+		return view
+	}()
+
+	// MARK: - Initializers
+	init(viewModel: {{ prefix }}{{ module_info.name }}ViewModel) {
+		self.viewModel = viewModel
+		super.init()
+	}
+
+	// MARK: - Life cycle
+	override func loadView() {
+		self.view = self.rootView
+	}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
+extension {{ prefix }}{{ module_info.name }}ViewController: {{ prefix }}{{ module_info.name }}ViewDelegate {
+	
+}

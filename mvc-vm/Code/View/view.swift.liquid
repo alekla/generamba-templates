@@ -1,0 +1,27 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}View: BaseRootView {
+	
+	// MARK: - Private properties
+	private var delegate: GiveFeedbackSelectUserViewDelegate
+
+	// MARK: - Initializers
+	init(delegate: {{ module_info.name }}ViewDelegate) {
+		self.delegate = delegate
+		super.init(frame: .zero)
+		setupViews()
+	}
+	
+	// MARK: - Private methods
+    private func setupViews() {
+
+    }
+}

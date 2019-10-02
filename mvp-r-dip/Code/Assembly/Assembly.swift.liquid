@@ -1,0 +1,36 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import Dip
+
+final class {{ prefix }}{{ module_info.name }}Assembly {
+
+    static func build(with root: DependencyContainer) -> DependencyContainer {
+        let container = DependencyContainer()
+        let viewTag = "{{ prefix }}{{ module_info.name }}ViewController"
+        let interactor = container.register(.shared, factory: {{ prefix }}{{ module_info.name }}Interactor.init)
+            .resolvingProperties { (container, interactor) in
+                interactor.presenter = try container.resolve()
+        }
+        container.register(interactor, type: {{ prefix }}{{ module_info.name }}InteractorInput.self)
+        let presenter = container.register(.shared, factory: {{ prefix }}{{ module_info.name }}Presenter.init)
+            .resolvingProperties { container, presenter in
+                presenter.view = try container.resolve(tag: viewTag)
+                presenter.router = try try container.resolve(tag: viewTag)
+        }
+        container.register(presenter, type: {{ module_info.name }}InteractorOutput.self)
+        let view = container.register(.shared, tag: viewTag) { {{ prefix }}{{ module_info.name }}ViewController() }
+            .resolvingProperties { container, view in
+                view.output = try container.resolve()
+        }
+        container.register(view, type: TransitionHandler.self)
+        container.register(view, type: {{ module_info.name }}ViewInput.self)
+        return container
+    }
+}
