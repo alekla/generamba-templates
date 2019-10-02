@@ -1,0 +1,18 @@
+# Template information section
+name: "mvc-vm"
+summary: "mvc-vm"
+author: "Alexandr Klavsut"
+version: "2.0.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# View layer
+- {name: View/View.swift, path: Code/View/view.swift.liquid}
+
+# ViewController
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# ViewModel
+- {name: ViewModel/ViewModel.swift, path: Code/ViewModel/viewmodel.swift.liquid}

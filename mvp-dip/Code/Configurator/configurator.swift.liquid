@@ -1,0 +1,28 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import Dip
+
+class {{ prefix }}{{ module_info.name }}Assembly {
+    func build(root: DependencyContainer) -> DependencyContainer {
+        let container = DependencyContainer()
+        let viewTag = "{{ prefix }}{{ module_info.name }}ViewController"
+        let presenter = container.register(.shared, factory: {{ prefix }}{{ module_info.name }}Presenter.init)
+            .resolvingProperties { container, presenter in
+                presenter.view = try container.resolve(tag: viewTag)
+        }
+        container.register(presenter, type: {{ module_info.name }}ViewOutput.self)
+        let view = container.register(.shared, tag: viewTag) { {{ prefix }}{{ module_info.name }}ViewController() }
+            .resolvingProperties { container, view in
+                view.output = try container.resolve()
+        }
+        container.register(view, type: {{ module_info.name }}ViewInput.self)
+        return container
+    }
+}

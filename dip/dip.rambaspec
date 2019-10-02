@@ -1,0 +1,25 @@
+# Template information section
+name: "dip"
+summary: "dip clean architecture teamplate"
+author: "Alexandr Klavsut"
+version: "3.0.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+
+# View layer
+- {name: View/ViewController.swift, path: Code/View/ViewController.swift.liquid}
+- {name: View/ViewProtocols.swift, path: Code/View/ViewProtocols.swift.liquid}
+- {name: View/Views/View.swift, path: Code/View/Views/View.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/Presenter.swift.liquid}
+
+# View layer
+- {name: Interactor/Interactor.swift, path: Code/Interactor/Interactor.swift.liquid}
+- {name: Interactor/InteractorProtocols.swift, path: Code/Interactor/InteractorProtocols.swift.liquid}
+
+# Assembly
+- {name: Assembly/Assembly.swift, path: Code/Assembly/Assembly.swift.liquid}
