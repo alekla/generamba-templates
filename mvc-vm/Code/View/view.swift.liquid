@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol {{ module_info.name }}ViewDelegate: class {
+	
+}
+
 class {{ module_info.name }}View: BaseRootView {
 	
 	// MARK: - Private properties
-	private var delegate: GiveFeedbackSelectUserViewDelegate
+	private weak var delegate: {{ module_info.name }}ViewDelegate!
 
 	// MARK: - Initializers
 	init(delegate: {{ module_info.name }}ViewDelegate) {

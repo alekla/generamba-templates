@@ -12,7 +12,10 @@ code_files:
 - {name: View/View.swift, path: Code/View/view.swift.liquid}
 
 # ViewController
-- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+- {name: ViewController/ViewController.swift, path: Code/ViewController/viewcontroller.swift.liquid}
 
 # ViewModel
 - {name: ViewModel/ViewModel.swift, path: Code/ViewModel/viewmodel.swift.liquid}
+
+# ViewModel
+- {name: Fabric.swift, path: Code/fabric.swift.liquid}
