@@ -1,10 +1,9 @@
 import UIKit
 
 final class {{ module_info.name }}ViewController: UIViewController, {{ module_info.name }}ViewProtocol {
-    var presenter: {{ module_info.name }}ViewOutput!
+    var presenter: {{ module_info.name }}PresenterProtocol?
 
-
-    //	MARK: Life cycle
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }

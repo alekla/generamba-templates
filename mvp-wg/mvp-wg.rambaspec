@@ -8,6 +8,12 @@ license: "MIT"
 # The declarations for code files
 
 code_files:
+# Assembly
+- {name: Assembly/Assembly.swift, path: Code/Assembly/assembly.swift.liquid}
+
+# ViewModel
+- {name: ViewModel/ViewModel.swift, path: Code/ViewModel/viewmodel.swift.liquid}
+
 # View layer
 - {name: View/ViewProtocol.swift, path: Code/View/viewProtocol.swift.liquid}
 - {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
@@ -15,10 +21,3 @@ code_files:
 # Presenter layer
 - {name: Presenter/PresenterProtocol.swift, path: Code/Presenter/presenterProtocol.swift.liquid}
 - {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
-
-# ViewModel
-- {name: ViewModel/ViewModel.swift, path: Code/Assembly/assembly.swift.liquid}
-
-# Assembly
-- {name: Assembly/Assembly.swift, path: Code/Assembly/assembly.swift.liquid}
-
