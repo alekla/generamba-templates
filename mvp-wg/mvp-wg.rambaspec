@@ -1,0 +1,24 @@
+# Template information section
+name: "vmp-wg"
+summary: "MVP template WG"
+author: "Aleksandr Klavsut"
+version: "2.0.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+# View layer
+- {name: View/ViewProtocol.swift, path: Code/View/viewProtocol.swift.liquid}
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/PresenterProtocol.swift, path: Code/Presenter/presenterProtocol.swift.liquid}
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# ViewModel
+- {name: ViewModel/ViewModel.swift, path: Code/Assembly/assembly.swift.liquid}
+
+# Assembly
+- {name: Assembly/Assembly.swift, path: Code/Assembly/assembly.swift.liquid}
+

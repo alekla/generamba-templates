@@ -1,0 +1,15 @@
+import UIKit
+
+final class {{ module_info.name }}Assembly: UIViewControllerAssemblyProtocol {
+    init() {}
+
+    func buildModule() -> UIViewController {
+        let controller = {{ module_info.name }}ViewController()
+        let presenter = {{ module_info.name }}Presenter(
+            view: controller
+        )
+        controller.presenter = presenter
+
+        return controller
+    }
+}
