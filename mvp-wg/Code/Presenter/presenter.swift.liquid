@@ -1,0 +1,11 @@
+import Foundation
+
+final class {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol {
+    weak var view: {{ module_info.name }}ViewProtocol?
+
+    init(view: {{ module_info.name }}ViewProtocol) {
+    	self.view = view
+    }
+
+    // MARK: - {{ module_info.name }}PresenterProtocol
+}
