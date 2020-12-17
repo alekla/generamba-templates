@@ -1,0 +1,9 @@
+import UIKit
+
+final class {{ module_info.name }}Factory {
+    static func make() -> UIViewController {
+		let viewModel = {{ module_info.name }}ViewModel()
+        let view = {{ module_info.name }}ViewController(viewModel: viewModel)
+        return view
+    }
+}

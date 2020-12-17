@@ -1,0 +1,19 @@
+# Template information section
+name: "mvvm-b"
+summary: "mvvm-b"
+author: "Alexandr Klavsut"
+version: "2.0.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+
+# ViewController
+- {name: ViewController/ViewController.swift, path: Code/ViewController/viewcontroller.swift.liquid}
+
+# ViewModel
+- {name: ViewModel/ViewModel.swift, path: Code/ViewModel/viewmodel.swift.liquid}
+
+# Factory
+- {name: Factory/Factory.swift, path: Code/Factory/factory.swift.liquid}
